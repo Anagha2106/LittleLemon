@@ -1,12 +1,11 @@
-
 from django.test import TestCase
-from restaurant.models import MenuItem, Booking
+from restaurant.models import Menu, Booking
 
 
-class MenuItemTest(TestCase):
+class MenuTest(TestCase):
 
     def test_get_item(self):
-        item = MenuItem.objects.create(
+        item = Menu.objects.create(
             title="IceCream",
             price=80,
             inventory=100

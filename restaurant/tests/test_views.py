@@ -1,20 +1,19 @@
-
 from rest_framework.test import APITestCase
 from rest_framework import status
 
-from restaurant.models import MenuItem
+from restaurant.models import Menu
 
 
 class MenuViewTest(APITestCase):
 
     def setUp(self):
-        MenuItem.objects.create(
+        Menu.objects.create(
             title="Pizza",
             price=150,
             inventory=10
         )
 
-        MenuItem.objects.create(
+        Menu.objects.create(
             title="Pasta",
             price=120,
             inventory=15
@@ -55,7 +54,4 @@ class MenuViewTest(APITestCase):
             status.HTTP_201_CREATED
         )
 
-        self.assertEqual(
-            MenuItem.objects.count(),
-            3
-        )
+        self.assertEqual(Menu.objects.count(), 3)
